@@ -1,18 +1,20 @@
-# ASVS 2 Checklist 🟡 – General – Devsecops
+# 🟡 ASVS 2 Checklist – general – devsecops
 
-_Use during DESIGN and PRE-MERGE review. This list is tailored to your stack and responsibility._
+*Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
-- [ ] 🟡 V5.4.3 – Verify that files obtained from untrusted sources are scanned by antivirus scanners to prevent serving of known malicious content.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
 
-_No additional guidance provided._
+- [ ] **V13.3.1** – Verify that a secrets management solution, such as a key vault, is used to securely create, store, control access to, and destroy backend secrets. These could include passwords, key material, integrations with databases and third-party systems, keys and seeds for time-based tokens, other internal secrets, and API keys. Secrets must not be included in application source code or included in build artifacts. For an L3 application, this must involve a hardware-backed solution such as an HSM.
 
-</details>
-- [ ] 🟡 V13.3.1 – Verify that a secrets management solution, such as a key vault, is used to securely create, store, control access to, and destroy backend secrets. These could include passwords, key material, integrations with databases and third-party systems, keys and seeds for time-based tokens, other internal secrets, and API keys. Secrets must not be included in application source code or included in build artifacts. For an L3 application, this must involve a hardware-backed solution such as an HSM.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V5.4.3** – Verify that files obtained from untrusted sources are scanned by antivirus scanners to prevent serving of known malicious content.
 
-_No additional guidance provided._
+<details><summary>Advanced defense‑in‑depth guidance</summary>
+
+
+_Add organisation‑specific recommendations, links to tooling, threat models, etc._
 
 </details>
+
+
+---
+
+Generated from [OWASP ASVS 5.0.0](https://owasp.org/www-project-application-security-verification-standard/) on {}. Do not edit manually; run `update_checklists.py` instead.

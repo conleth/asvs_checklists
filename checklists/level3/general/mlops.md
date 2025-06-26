@@ -1,200 +1,72 @@
-# ASVS 3 Checklist 🔴 – General – Mlops
+# 🔴 ASVS 3 Checklist – general – mlops
 
-_Use during DESIGN and PRE-MERGE review. This list is tailored to your stack and responsibility._
+*Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
-- [ ] 🔴 V1.2.10 – Verify that the application is protected against CSV and Formula Injection. The application must follow the escaping rules defined in RFC 4180 sections 2.6 and 2.7 when exporting CSV content. Additionally, when exporting to CSV or other spreadsheet formats (such as XLS, XLSX, or ODF), special characters (including '=', '+', '-', '@', '\t' (tab), and '\0' (null character)) must be escaped with a single quote if they appear as the first character in a field value.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
 
-_No additional guidance provided._
+- [ ] **V1.2.10** – Verify that the application is protected against CSV and Formula Injection. The application must follow the escaping rules defined in RFC 4180 sections 2.6 and 2.7 when exporting CSV content. Additionally, when exporting to CSV or other spreadsheet formats (such as XLS, XLSX, or ODF), special characters (including '=', '+', '-', '@', '\t' (tab), and '\0' (null character)) must be escaped with a single quote if they appear as the first character in a field value.
 
-</details>
-- [ ] 🔴 V1.5.3 – Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusion (RFI) or Server-side Request Forgery (SSRF) attacks.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V1.5.3** – Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusion (RFI) or Server-side Request Forgery (SSRF) attacks.
 
-_No additional guidance provided._
+- [ ] **V10.3.5** – Verify that the resource server prevents the use of stolen access tokens or replay of access tokens (from unauthorized parties) by requiring sender-constrained access tokens, either Mutual TLS for OAuth 2 or OAuth 2 Demonstration of Proof of Possession (DPoP).
 
-</details>
-- [ ] 🔴 V3.1.1 – Verify that application documentation states the expected security features that browsers using the application must support (such as HTTPS, HTTP Strict Transport Security (HSTS), Content Security Policy (CSP), and other relevant HTTP security mechanisms). It must also define how the application must behave when some of these features are not available (such as warning the user or blocking access).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V10.4.12** – Verify that for a given client, the authorization server only allows the 'response_mode' value that this client needs to use. For example, by having the authorization server validate this value against the expected values or by using pushed authorization request (PAR) or JWT-secured Authorization Request (JAR).
 
-_No additional guidance provided._
+- [ ] **V10.4.14** – Verify that the authorization server issues only sender-constrained (Proof-of-Possession) access tokens, either with certificate-bound access tokens using mutual TLS (mTLS) or DPoP-bound access tokens (Demonstration of Proof of Possession).
 
-</details>
-- [ ] 🔴 V3.4.8 – Verify that all HTTP responses that initiate a document rendering (such as responses with Content-Type text/html), include the Cross‑Origin‑Opener‑Policy header field with the same-origin directive or the same-origin-allow-popups directive as required. This prevents attacks that abuse shared access to Window objects, such as tabnabbing and frame counting.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V10.4.15** – Verify that, for a server-side client (which is not executed on the end-user device), the authorization server ensures that the 'authorization_details' parameter value is from the client backend and that the user has not tampered with it. For example, by requiring the usage of pushed authorization request (PAR) or JWT-secured Authorization Request (JAR).
 
-_No additional guidance provided._
+- [ ] **V11.2.5** – Verify that all cryptographic modules fail securely, and errors are handled in a way that does not enable vulnerabilities, such as Padding Oracle attacks.
 
-</details>
-- [ ] 🔴 V3.7.4 – Verify that the application's top-level domain (e.g., site.tld) is added to the public preload list for HTTP Strict Transport Security (HSTS). This ensures that the use of TLS for the application is built directly into the main browsers, rather than relying only on the Strict-Transport-Security response header field.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V11.3.4** – Verify that nonces, initialization vectors, and other single-use numbers are not used for more than one encryption key and data-element pair. The method of generation must be appropriate for the algorithm being used.
 
-_No additional guidance provided._
+- [ ] **V13.1.3** – Verify that the application documentation defines resource‑management strategies for every external system or service it uses (e.g., databases, file handles, threads, HTTP connections). This should include resource‑release procedures, timeout settings, failure handling, and where retry logic is implemented, specifying retry limits, delays, and back‑off algorithms. For synchronous HTTP request–response operations it should mandate short timeouts and either disable retries or strictly limit retries to prevent cascading delays and resource exhaustion.
 
-</details>
-- [ ] 🔴 V4.2.4 – Verify that the application only accepts HTTP/2 and HTTP/3 requests where the header fields and values do not contain any CR (\r), LF (\n), or CRLF (\r\n) sequences, to prevent header injection attacks.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V13.1.4** – Verify that the application's documentation defines the secrets that are critical for the security of the application and a schedule for rotating them, based on the organization's threat model and business requirements.
 
-_No additional guidance provided._
+- [ ] **V13.4.6** – Verify that the application does not expose detailed version information of backend components.
 
-</details>
-- [ ] 🔴 V5.2.5 – Verify that the application does not allow uploading compressed files containing symlinks unless this is specifically required (in which case it will be necessary to enforce an allowlist of the files that can be symlinked to).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V14.2.5** – Verify that caching mechanisms are configured to only cache responses which have the expected content type for that resource and do not contain sensitive, dynamic content. The web server should return a 404 or 302 response when a non-existent file is accessed rather than returning a different, valid file. This should prevent Web Cache Deception attacks.
 
-_No additional guidance provided._
+- [ ] **V15.2.5** – Verify that the application implements additional protections around parts of the application which are documented as containing "dangerous functionality" or using third-party libraries considered to be "risky components". This could include techniques such as sandboxing, encapsulation, containerization or network level isolation to delay and deter attackers who compromise one part of an application from pivoting elsewhere in the application.
 
-</details>
-- [ ] 🔴 V6.3.6 – Verify that email is not used as either a single-factor or multi-factor authentication mechanism.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V15.4.3** – Verify that locks are used consistently to avoid threads getting stuck, whether by waiting on each other or retrying endlessly, and that locking logic stays within the code responsible for managing the resource to ensure locks cannot be inadvertently or maliciously modified by external classes or code.
 
-_No additional guidance provided._
+- [ ] **V15.4.4** – Verify that resource allocation policies prevent thread starvation by ensuring fair access to resources, such as by leveraging thread pools, allowing lower-priority threads to proceed within a reasonable timeframe.
 
-</details>
-- [ ] 🔴 V6.3.7 – Verify that users are notified after updates to authentication details, such as credential resets or modification of the username or email address.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V16.5.4** – Verify that a "last resort" error handler is defined which will catch all unhandled exceptions. This is both to avoid losing error details that must go to log files and to ensure that an error does not take down the entire application process, leading to a loss of availability.
 
-_No additional guidance provided._
+- [ ] **V17.2.8** – Verify that the Datagram Transport Layer Security (DTLS) certificate is checked against the Session Description Protocol (SDP) fingerprint attribute, terminating the media stream if the check fails, to ensure the authenticity of the media stream.
 
-</details>
-- [ ] 🔴 V6.3.8 – Verify that valid users cannot be deduced from failed authentication challenges, such as by basing on error messages, HTTP response codes, or different response times. Registration and forgot password functionality must also have this protection.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+- [ ] **V3.1.1** – Verify that application documentation states the expected security features that browsers using the application must support (such as HTTPS, HTTP Strict Transport Security (HSTS), Content Security Policy (CSP), and other relevant HTTP security mechanisms). It must also define how the application must behave when some of these features are not available (such as warning the user or blocking access).
 
-_No additional guidance provided._
+- [ ] **V3.4.8** – Verify that all HTTP responses that initiate a document rendering (such as responses with Content-Type text/html), include the Cross‑Origin‑Opener‑Policy header field with the same-origin directive or the same-origin-allow-popups directive as required. This prevents attacks that abuse shared access to Window objects, such as tabnabbing and frame counting.
+
+- [ ] **V3.7.4** – Verify that the application's top-level domain (e.g., site.tld) is added to the public preload list for HTTP Strict Transport Security (HSTS). This ensures that the use of TLS for the application is built directly into the main browsers, rather than relying only on the Strict-Transport-Security response header field.
+
+- [ ] **V4.2.4** – Verify that the application only accepts HTTP/2 and HTTP/3 requests where the header fields and values do not contain any CR (\r), LF (\n), or CRLF (\r\n) sequences, to prevent header injection attacks.
+
+- [ ] **V5.2.5** – Verify that the application does not allow uploading compressed files containing symlinks unless this is specifically required (in which case it will be necessary to enforce an allowlist of the files that can be symlinked to).
+
+- [ ] **V6.3.6** – Verify that email is not used as either a single-factor or multi-factor authentication mechanism.
+
+- [ ] **V6.3.7** – Verify that users are notified after updates to authentication details, such as credential resets or modification of the username or email address.
+
+- [ ] **V6.3.8** – Verify that valid users cannot be deduced from failed authentication challenges, such as by basing on error messages, HTTP response codes, or different response times. Registration and forgot password functionality must also have this protection.
+
+- [ ] **V8.1.3** – Verify that the application's documentation defines the environmental and contextual attributes (including but not limited to, time of day, user location, IP address, or device) that are used in the application to make security decisions, including those pertaining to authentication and authorization.
+
+- [ ] **V8.3.2** – Verify that changes to values on which authorization decisions are made are applied immediately. Where changes cannot be applied immediately, (such as when relying on data in self-contained tokens), there must be mitigating controls to alert when a consumer performs an action when they are no longer authorized to do so and revert the change. Note that this alternative would not mitigate information leakage.
+
+- [ ] **V8.3.3** – Verify that access to an object is based on the originating subject's (e.g. consumer's) permissions, not on the permissions of any intermediary or service acting on their behalf. For example, if a consumer calls a web service using a self-contained token for authentication, and the service then requests data from a different service, the second service will use the consumer's token, rather than a machine-to-machine token from the first service, to make permission decisions.
+
+<details><summary>Advanced defense‑in‑depth guidance</summary>
+
+
+_Add organisation‑specific recommendations, links to tooling, threat models, etc._
 
 </details>
-- [ ] 🔴 V8.1.3 – Verify that the application's documentation defines the environmental and contextual attributes (including but not limited to, time of day, user location, IP address, or device) that are used in the application to make security decisions, including those pertaining to authentication and authorization.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
 
-_No additional guidance provided._
 
-</details>
-- [ ] 🔴 V8.3.2 – Verify that changes to values on which authorization decisions are made are applied immediately. Where changes cannot be applied immediately, (such as when relying on data in self-contained tokens), there must be mitigating controls to alert when a consumer performs an action when they are no longer authorized to do so and revert the change. Note that this alternative would not mitigate information leakage.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
+---
 
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V8.3.3 – Verify that access to an object is based on the originating subject's (e.g. consumer's) permissions, not on the permissions of any intermediary or service acting on their behalf. For example, if a consumer calls a web service using a self-contained token for authentication, and the service then requests data from a different service, the second service will use the consumer's token, rather than a machine-to-machine token from the first service, to make permission decisions.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V10.3.5 – Verify that the resource server prevents the use of stolen access tokens or replay of access tokens (from unauthorized parties) by requiring sender-constrained access tokens, either Mutual TLS for OAuth 2 or OAuth 2 Demonstration of Proof of Possession (DPoP).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V10.4.12 – Verify that for a given client, the authorization server only allows the 'response_mode' value that this client needs to use. For example, by having the authorization server validate this value against the expected values or by using pushed authorization request (PAR) or JWT-secured Authorization Request (JAR).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V10.4.14 – Verify that the authorization server issues only sender-constrained (Proof-of-Possession) access tokens, either with certificate-bound access tokens using mutual TLS (mTLS) or DPoP-bound access tokens (Demonstration of Proof of Possession).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V10.4.15 – Verify that, for a server-side client (which is not executed on the end-user device), the authorization server ensures that the 'authorization_details' parameter value is from the client backend and that the user has not tampered with it. For example, by requiring the usage of pushed authorization request (PAR) or JWT-secured Authorization Request (JAR).
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V11.2.5 – Verify that all cryptographic modules fail securely, and errors are handled in a way that does not enable vulnerabilities, such as Padding Oracle attacks.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V11.3.4 – Verify that nonces, initialization vectors, and other single-use numbers are not used for more than one encryption key and data-element pair. The method of generation must be appropriate for the algorithm being used.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V13.1.3 – Verify that the application documentation defines resource‑management strategies for every external system or service it uses (e.g., databases, file handles, threads, HTTP connections). This should include resource‑release procedures, timeout settings, failure handling, and where retry logic is implemented, specifying retry limits, delays, and back‑off algorithms. For synchronous HTTP request–response operations it should mandate short timeouts and either disable retries or strictly limit retries to prevent cascading delays and resource exhaustion.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V13.1.4 – Verify that the application's documentation defines the secrets that are critical for the security of the application and a schedule for rotating them, based on the organization's threat model and business requirements.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V13.4.6 – Verify that the application does not expose detailed version information of backend components.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V14.2.5 – Verify that caching mechanisms are configured to only cache responses which have the expected content type for that resource and do not contain sensitive, dynamic content. The web server should return a 404 or 302 response when a non-existent file is accessed rather than returning a different, valid file. This should prevent Web Cache Deception attacks.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V15.2.5 – Verify that the application implements additional protections around parts of the application which are documented as containing "dangerous functionality" or using third-party libraries considered to be "risky components". This could include techniques such as sandboxing, encapsulation, containerization or network level isolation to delay and deter attackers who compromise one part of an application from pivoting elsewhere in the application.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V15.4.3 – Verify that locks are used consistently to avoid threads getting stuck, whether by waiting on each other or retrying endlessly, and that locking logic stays within the code responsible for managing the resource to ensure locks cannot be inadvertently or maliciously modified by external classes or code.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V15.4.4 – Verify that resource allocation policies prevent thread starvation by ensuring fair access to resources, such as by leveraging thread pools, allowing lower-priority threads to proceed within a reasonable timeframe.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V16.5.4 – Verify that a "last resort" error handler is defined which will catch all unhandled exceptions. This is both to avoid losing error details that must go to log files and to ensure that an error does not take down the entire application process, leading to a loss of availability.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
-- [ ] 🔴 V17.2.8 – Verify that the Datagram Transport Layer Security (DTLS) certificate is checked against the Session Description Protocol (SDP) fingerprint attribute, terminating the media stream if the check fails, to ensure the authenticity of the media stream.
-  <details>
-<summary>Advanced: Defense-in-Depth Guidance</summary>
-
-_No additional guidance provided._
-
-</details>
+Generated from [OWASP ASVS 5.0.0](https://owasp.org/www-project-application-security-verification-standard/) on {}. Do not edit manually; run `update_checklists.py` instead.
