@@ -14,11 +14,28 @@ def map_roles_and_languages(description, role_mapping, language_mapping):
     languages = [lang for lang, keywords in language_mapping.items() if any(keyword in description.lower() for keyword in keywords)]
     return roles or ['general'], languages or ['general']
 
+def get_level_emoji(level):
+    if level == "1":
+        return "🟢"
+    elif level == "2":
+        return "🟡"
+    elif level == "3":
+        return "🔴"
+    return ""
+
+def get_details_section(control):
+    # Placeholder for advanced guidance; can be extended if such data is available
+    return f"<details>\n<summary>Advanced: Defense-in-Depth Guidance</summary>\n\n_No additional guidance provided._\n\n</details>"
+
 # Generate Markdown content
 def generate_markdown(level, language, role, controls):
-    title = f"ASVS {level} Checklist – {language.capitalize()} – {role.capitalize()}"
+    emoji = get_level_emoji(level)
+    title = f"ASVS {level} Checklist {emoji} – {language.capitalize()} – {role.capitalize()}"
     header = "_Use during DESIGN and PRE-MERGE review. This list is tailored to your stack and responsibility._"
-    checklist = "\n".join([f"- [ ] {control['Shortcode']} – {control['Description']}" for control in controls])
+    checklist = "\n".join([
+        f"- [ ] {get_level_emoji(control['L'])} {control['Shortcode']} – {control['Description']}\n  {get_details_section(control)}"
+        for control in controls
+    ])
     return f"# {title}\n\n{header}\n\n{checklist}\n"
 
 # Save Markdown files
