@@ -1,11 +1,19 @@
-# 🔴 ASVS 3 Checklist – general – backend
+🔴 **Level 3**
+
+# ASVS 3 Checklist – general – backend
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
 
+
+🎯 **ASVS V1**
+
 - [ ] **V1.2.10** – Verify that the application is protected against CSV and Formula Injection. The application must follow the escaping rules defined in RFC 4180 sections 2.6 and 2.7 when exporting CSV content. Additionally, when exporting to CSV or other spreadsheet formats (such as XLS, XLSX, or ODF), special characters (including '=', '+', '-', '@', '\t' (tab), and '\0' (null character)) must be escaped with a single quote if they appear as the first character in a field value.
 
 - [ ] **V1.5.3** – Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusion (RFI) or Server-side Request Forgery (SSRF) attacks.
+
+
+🎯 **ASVS V10**
 
 - [ ] **V10.2.3** – Verify that the OAuth client only requests the required scopes (or other authorization parameters) in requests to the authorization server.
 
@@ -21,6 +29,9 @@
 
 - [ ] **V10.4.16** – Verify that the client is confidential and the authorization server requires the use of strong client authentication methods (based on public-key cryptography and resistant to replay attacks), such as mutual TLS ('tls_client_auth', 'self_signed_tls_client_auth') or private key JWT ('private_key_jwt').
 
+
+🎯 **ASVS V11**
+
 - [ ] **V11.1.3** – Verify that cryptographic discovery mechanisms are employed to identify all instances of cryptography in the system, including encryption, hashing, and signing operations.
 
 - [ ] **V11.2.4** – Verify that all cryptographic operations are constant-time, with no 'short-circuit' operations in comparisons, calculations, or returns, to avoid leaking information.
@@ -31,7 +42,13 @@
 
 - [ ] **V11.7.1** – Verify that full memory encryption is in use that protects sensitive data while it is in use, preventing access by unauthorized users or processes.
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.3.5** – Verify that services communicating internally within a system (intra-service communications) use strong authentication to ensure that each endpoint is verified. Strong authentication methods, such as TLS client authentication, must be employed to ensure identity, using public-key infrastructure and mechanisms that are resistant to replay attacks. For microservice architectures, consider using a service mesh to simplify certificate management and enhance security.
+
+
+🎯 **ASVS V13**
 
 - [ ] **V13.1.3** – Verify that the application documentation defines resource‑management strategies for every external system or service it uses (e.g., databases, file handles, threads, HTTP connections). This should include resource‑release procedures, timeout settings, failure handling, and where retry logic is implemented, specifying retry limits, delays, and back‑off algorithms. For synchronous HTTP request–response operations it should mandate short timeouts and either disable retries or strictly limit retries to prevent cascading delays and resource exhaustion.
 
@@ -41,23 +58,47 @@
 
 - [ ] **V13.4.7** – Verify that the web tier is configured to only serve files with specific file extensions to prevent unintentional information, configuration, and source code leakage.
 
+
+🎯 **ASVS V14**
+
 - [ ] **V14.2.7** – Verify that sensitive information is subject to data retention classification, ensuring that outdated or unnecessary data is deleted automatically, on a defined schedule, or as the situation requires.
 
 - [ ] **V14.2.8** – Verify that sensitive information is removed from the metadata of user-submitted files unless storage is consented to by the user.
 
+
+🎯 **ASVS V15**
+
 - [ ] **V15.4.2** – Verify that checks on a resource's state, such as its existence or permissions, and the actions that depend on them are performed as a single atomic operation to prevent time-of-check to time-of-use (TOCTOU) race conditions. For example, checking if a file exists before opening it, or verifying a user’s access before granting it.
+
+
+🎯 **ASVS V17**
 
 - [ ] **V17.2.6** – Verify that the media server is not susceptible to the "ClientHello" Race Condition vulnerability in Datagram Transport Layer Security (DTLS) by checking if the media server is publicly known to be vulnerable or by performing the race condition test.
 
 - [ ] **V17.2.8** – Verify that the Datagram Transport Layer Security (DTLS) certificate is checked against the Session Description Protocol (SDP) fingerprint attribute, terminating the media stream if the check fails, to ensure the authenticity of the media stream.
 
+
+🎯 **ASVS V2**
+
 - [ ] **V2.3.5** – Verify that high-value business logic flows require multi-user approval to prevent unauthorized or accidental actions. This could include but is not limited to large monetary transfers, contract approvals, access to classified information, or safety overrides in manufacturing.
+
+
+🎯 **ASVS V3**
 
 - [ ] **V3.5.8** – Verify that authenticated resources (such as images, videos, scripts, and other documents) can be loaded or embedded on behalf of the user only when intended. This can be accomplished by strict validation of the Sec-Fetch-* HTTP request header fields to ensure that the request did not originate from an inappropriate cross-origin call, or by setting a restrictive Cross-Origin-Resource-Policy HTTP response header field to instruct the browser to block returned content.
 
+
+🎯 **ASVS V4**
+
 - [ ] **V4.2.5** – Verify that, if the application (backend or frontend) builds and sends requests, it uses validation, sanitization, or other mechanisms to avoid creating URIs (such as for API calls) or HTTP request header fields (such as Authorization or Cookie), which are too long to be accepted by the receiving component. This could cause a denial of service, such as when sending an overly long request (e.g., a long cookie header field), which results in the server always responding with an error status.
 
+
+🎯 **ASVS V5**
+
 - [ ] **V5.3.3** – Verify that server-side file processing, such as file decompression, ignores user-provided path information to prevent vulnerabilities such as zip slip.
+
+
+🎯 **ASVS V6**
 
 - [ ] **V6.3.5** – Verify that users are notified of suspicious authentication attempts (successful or unsuccessful). This may include authentication attempts from an unusual location or client, partially successful authentication (only one of multiple factors), an authentication attempt after a long period of inactivity or a successful authentication after several unsuccessful attempts.
 
@@ -79,7 +120,13 @@
 
 - [ ] **V6.7.2** – Verify that the challenge nonce is at least 64 bits in length, and statistically unique or unique over the lifetime of the cryptographic device.
 
+
+🎯 **ASVS V7**
+
 - [ ] **V7.5.3** – Verify that the application requires further authentication with at least one factor or secondary verification before performing highly sensitive transactions or operations.
+
+
+🎯 **ASVS V8**
 
 - [ ] **V8.1.3** – Verify that the application's documentation defines the environmental and contextual attributes (including but not limited to, time of day, user location, IP address, or device) that are used in the application to make security decisions, including those pertaining to authentication and authorization.
 

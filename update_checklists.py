@@ -132,15 +132,25 @@ def classify_controls(controls: List[Dict]) -> Dict[Tuple[str, str, str], List[D
 def render_markdown(level: str, language: str, role: str, controls: List[Dict]) -> str:
     emoji = LEVEL_EMOJI[level]
     lines: List[str] = []
-    lines.append(f"# {emoji} ASVS {level} Checklist – {language} – {role}\n")
+    # Level badge at the very top
+    lines.append(f"{emoji} **Level {level}**\n")
+    lines.append(f"# ASVS {level} Checklist – {language} – {role}\n")
     lines.append(HEADER_TEXT + "\n\n")
     if controls:
+        last_chapter = None
         for ctrl in sorted(controls, key=lambda c: c["code"]):
             code = ctrl["code"]
             desc = ctrl["desc"].rstrip(".")
+            # Insert 🎯 before each new ASVS chapter (e.g. V1, V2, ...)
+            chapter = code.split(".")[0] if "." in code else code
+            if chapter != last_chapter:
+                lines.append(f"\n🎯 **ASVS {chapter}**\n")
+                last_chapter = chapter
             lines.append(f"- [ ] **{code}** – {desc}.\n")
     else:
-        lines.append(PLACEHOLDER_TEXT + "\n")
+        # Fallback block with ⚠️ and required wording (per Copilot Authoring Guide)
+        lines.append(f"> ⚠️ **No ASVS items match this language/role.**  ")
+        lines.append(f"> Review the General checklist for Level {level}.\n")
     # Advanced guidance section (collapsed details) – optional placeholder
     lines.append("<details><summary>Advanced defense‑in‑depth guidance</summary>\n\n")
     lines.append("_Add organisation‑specific recommendations, links to tooling, threat models, etc._\n")

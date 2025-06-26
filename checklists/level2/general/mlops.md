@@ -1,7 +1,12 @@
-# 🟡 ASVS 2 Checklist – general – mlops
+🟡 **Level 2**
+
+# ASVS 2 Checklist – general – mlops
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V1**
 
 - [ ] **V1.2.6** – Verify that the application protects against LDAP injection vulnerabilities, or that specific security controls to prevent LDAP injection have been implemented.
 
@@ -14,6 +19,9 @@
 - [ ] **V1.3.6** – Verify that the application protects against Server-side Request Forgery (SSRF) attacks, by validating untrusted data against an allowlist of protocols, domains, paths and ports and sanitizing potentially dangerous characters before using the data to call another service.
 
 - [ ] **V1.3.7** – Verify that the application protects against template injection attacks by not allowing templates to be built based on untrusted input. Where there is no alternative, any untrusted input being included dynamically during template creation must be sanitized or strictly validated.
+
+
+🎯 **ASVS V10**
 
 - [ ] **V10.2.1** – Verify that, if the code flow is used, the OAuth client has protection against browser-based request forgery attacks, commonly known as cross-site request forgery (CSRF), which trigger token requests, either by using proof key for code exchange (PKCE) functionality or checking the 'state' parameter that was sent in the authorization request.
 
@@ -41,17 +49,29 @@
 
 - [ ] **V10.7.2** – Verify that when the authorization server prompts for user consent, it presents sufficient and clear information about what is being consented to. When applicable, this should include the nature of the requested authorizations (typically based on scope, resource server, Rich Authorization Requests (RAR) authorization details), the identity of the authorized application, and the lifetime of these authorizations.
 
+
+🎯 **ASVS V11**
+
 - [ ] **V11.1.2** – Verify that a cryptographic inventory is performed, maintained, regularly updated, and includes all cryptographic keys, algorithms, and certificates used by the application. It must also document where keys can and cannot be used in the system, and the types of data that can and cannot be protected using the keys.
 
 - [ ] **V11.2.2** – Verify that the application is designed with crypto agility such that random number, authenticated encryption, MAC, or hashing algorithms, key lengths, rounds, ciphers and modes can be reconfigured, upgraded, or swapped at any time, to protect against cryptographic breaks. Similarly, it must also be possible to replace keys and passwords and re-encrypt data. This will allow for seamless upgrades to post-quantum cryptography (PQC), once high-assurance implementations of approved PQC schemes or standards are widely available.
 
 - [ ] **V11.3.3** – Verify that encrypted data is protected against unauthorized modification preferably by using an approved authenticated encryption method or by combining an approved encryption method with an approved MAC algorithm.
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.3.1** – Verify that an encrypted protocol such as TLS is used for all inbound and outbound connections to and from the application, including monitoring systems, management tools, remote access and SSH, middleware, databases, mainframes, partner systems, or external APIs. The server must not fall back to insecure or unencrypted protocols.
+
+
+🎯 **ASVS V14**
 
 - [ ] **V14.1.1** – Verify that all sensitive data created and processed by the application has been identified and classified into protection levels. This includes data that is only encoded and therefore easily decoded, such as Base64 strings or the plaintext payload inside a JWT. Protection levels need to take into account any data protection and privacy regulations and standards which the application is required to comply with.
 
 - [ ] **V14.3.3** – Verify that data stored in browser storage (such as localStorage, sessionStorage, IndexedDB, or cookies) does not contain sensitive data, with the exception of session tokens.
+
+
+🎯 **ASVS V15**
 
 - [ ] **V15.1.2** – Verify that an inventory catalog, such as software bill of materials (SBOM), is maintained of all third-party libraries in use, including verifying that components come from pre-defined, trusted, and continually maintained repositories.
 
@@ -62,6 +82,9 @@
 - [ ] **V15.3.3** – Verify that the application has countermeasures to protect against mass assignment attacks by limiting allowed fields per controller and action, e.g., it is not possible to insert or update a field value when it was not intended to be part of that action.
 
 - [ ] **V15.3.7** – Verify that the application has defenses against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters (query string, body parameters, cookies, or header fields).
+
+
+🎯 **ASVS V16**
 
 - [ ] **V16.2.1** – Verify that each log entry includes necessary metadata (such as when, where, who, what) that would allow for a detailed investigation of the timeline when an event happens.
 
@@ -77,7 +100,13 @@
 
 - [ ] **V16.5.3** – Verify that the application fails gracefully and securely, including when an exception occurs, preventing fail-open conditions such as processing a transaction despite errors resulting from validation logic.
 
+
+🎯 **ASVS V2**
+
 - [ ] **V2.4.1** – Verify that anti-automation controls are in place to protect against excessive calls to application functions that could lead to data exfiltration, garbage-data creation, quota exhaustion, rate-limit breaches, denial-of-service, or overuse of costly resources.
+
+
+🎯 **ASVS V3**
 
 - [ ] **V3.4.4** – Verify that all HTTP responses contain an 'X-Content-Type-Options: nosniff' header field. This instructs browsers not to use content sniffing and MIME type guessing for the given response, and to require the response's Content-Type header field value to match the destination resource. For example, the response to a request for a style is only accepted if the response's Content-Type is 'text/css'. This also enables the use of the Cross-Origin Read Blocking (CORB) functionality by the browser.
 
@@ -85,15 +114,24 @@
 
 - [ ] **V3.7.2** – Verify that the application will only automatically redirect the user to a different hostname or domain (which is not controlled by the application) where the destination appears on an allowlist.
 
+
+🎯 **ASVS V4**
+
 - [ ] **V4.4.2** – Verify that, during the initial HTTP WebSocket handshake, the Origin header field is checked against a list of origins allowed for the application.
 
 - [ ] **V4.4.4** – Verify that dedicated WebSocket session management tokens are initially obtained or validated through the previously authenticated HTTPS session when transitioning an existing HTTPS session to a WebSocket channel.
+
+
+🎯 **ASVS V5**
 
 - [ ] **V5.2.3** – Verify that the application checks compressed files (e.g., zip, gz, docx, odt) against maximum allowed uncompressed size and against maximum number of files before uncompressing the file.
 
 - [ ] **V5.4.2** – Verify that file names served (e.g., in HTTP response header fields or email attachments) are encoded or sanitized (e.g., following RFC 6266) to preserve document structure and prevent injection attacks.
 
 - [ ] **V5.4.3** – Verify that files obtained from untrusted sources are scanned by antivirus scanners to prevent serving of known malicious content.
+
+
+🎯 **ASVS V6**
 
 - [ ] **V6.2.12** – Verify that passwords submitted during account registration or password changes are checked against a set of breached passwords.
 
@@ -111,9 +149,15 @@
 
 - [ ] **V6.8.4** – Verify that, if an application uses a separate Identity Provider (IdP) and expects specific authentication strength, methods, or recentness for specific functions, the application verifies this using the information returned by the IdP. For example, if OIDC is used, this might be achieved by validating ID Token claims such as 'acr', 'amr', and 'auth_time' (if present). If the IdP does not provide this information, the application must have a documented fallback approach that assumes that the minimum strength authentication mechanism was used (for example, single-factor authentication using username and password).
 
+
+🎯 **ASVS V7**
+
 - [ ] **V7.5.1** – Verify that the application requires full re-authentication before allowing modifications to sensitive account attributes which may affect authentication such as email address, phone number, MFA configuration, or other information used in account recovery.
 
 - [ ] **V7.5.2** – Verify that users are able to view and (having authenticated again with at least one factor) terminate any or all currently active sessions.
+
+
+🎯 **ASVS V9**
 
 - [ ] **V9.2.3** – Verify that the service only accepts tokens which are intended for use with that service (audience). For JWTs, this can be achieved by validating the 'aud' claim against an allowlist defined in the service.
 

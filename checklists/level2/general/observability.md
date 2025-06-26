@@ -1,15 +1,29 @@
-# 🟡 ASVS 2 Checklist – general – observability
+🟡 **Level 2**
+
+# ASVS 2 Checklist – general – observability
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.3.1** – Verify that an encrypted protocol such as TLS is used for all inbound and outbound connections to and from the application, including monitoring systems, management tools, remote access and SSH, middleware, databases, mainframes, partner systems, or external APIs. The server must not fall back to insecure or unencrypted protocols.
+
+
+🎯 **ASVS V13**
 
 - [ ] **V13.4.4** – Verify that using the HTTP TRACE method is not supported in production environments, to avoid potential information leakage.
 
 - [ ] **V13.4.5** – Verify that documentation (such as for internal APIs) and monitoring endpoints are not exposed unless explicitly intended.
 
+
+🎯 **ASVS V15**
+
 - [ ] **V15.3.4** – Verify that all proxying and middleware components transfer the user's original IP address correctly using trusted data fields that cannot be manipulated by the end user, and the application and web server use this correct value for logging and security decisions such as rate limiting, taking into account that even the original IP address may not be reliable due to dynamic IPs, VPNs, or corporate firewalls.
+
+
+🎯 **ASVS V16**
 
 - [ ] **V16.1.1** – Verify that an inventory exists documenting the logging performed at each layer of the application's technology stack, what events are being logged, log formats, where that logging is stored, how it is used, how access to it is controlled, and for how long logs are kept.
 

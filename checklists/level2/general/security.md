@@ -1,7 +1,12 @@
-# 🟡 ASVS 2 Checklist – general – security
+🟡 **Level 2**
+
+# ASVS 2 Checklist – general – security
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V10**
 
 - [ ] **V10.1.2** – Verify that the client only accepts values from the authorization server (such as the authorization code or ID Token) if these values result from an authorization flow that was initiated by the same user agent session and transaction. This requires that client-generated secrets, such as the proof key for code exchange (PKCE) 'code_verifier', 'state' or OIDC 'nonce', are not guessable, are specific to the transaction, and are securely bound to both the client and the user agent session in which the transaction was started.
 
@@ -10,6 +15,9 @@
 - [ ] **V10.3.3** – Verify that if an access control decision requires identifying a unique user from an access token (JWT or related token introspection response), the resource server identifies the user from claims that cannot be reassigned to other users. Typically, it means using a combination of 'iss' and 'sub' claims.
 
 - [ ] **V10.5.5** – Verify that, when using OIDC back-channel logout, the relying party mitigates denial of service through forced logout and cross-JWT confusion in the logout flow. The client must verify that the logout token is correctly typed with a value of 'logout+jwt', contains the 'event' claim with the correct member name, and does not contain a 'nonce' claim. Note that it is also recommended to have a short expiration (e.g., 2 minutes).
+
+
+🎯 **ASVS V11**
 
 - [ ] **V11.1.1** – Verify that there is a documented policy for management of cryptographic keys and a cryptographic key lifecycle that follows a key management standard such as NIST SP 800-57. This should include ensuring that keys are not overshared (for example, with more than two entities for shared secrets and more than one entity for private keys).
 
@@ -33,9 +41,18 @@
 
 - [ ] **V11.6.1** – Verify that only approved cryptographic algorithms and modes of operation are used for key generation and seeding, and digital signature generation and verification. Key generation algorithms must not generate insecure keys vulnerable to known attacks, for example, RSA keys which are vulnerable to Fermat factorization.
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.3.3** – Verify that TLS or another appropriate transport encryption mechanism used for all connectivity between internal, HTTP-based services within the application, and does not fall back to insecure or unencrypted communications.
 
+
+🎯 **ASVS V13**
+
 - [ ] **V13.3.1** – Verify that a secrets management solution, such as a key vault, is used to securely create, store, control access to, and destroy backend secrets. These could include passwords, key material, integrations with databases and third-party systems, keys and seeds for time-based tokens, other internal secrets, and API keys. Secrets must not be included in application source code or included in build artifacts. For an L3 application, this must involve a hardware-backed solution such as an HSM.
+
+
+🎯 **ASVS V14**
 
 - [ ] **V14.1.1** – Verify that all sensitive data created and processed by the application has been identified and classified into protection levels. This includes data that is only encoded and therefore easily decoded, such as Base64 strings or the plaintext payload inside a JWT. Protection levels need to take into account any data protection and privacy regulations and standards which the application is required to comply with.
 
@@ -43,9 +60,18 @@
 
 - [ ] **V14.2.4** – Verify that controls around sensitive data related to encryption, integrity verification, retention, how the data is to be logged, access controls around sensitive data in logs, privacy and privacy-enhancing technologies, are implemented as defined in the documentation for the specific data's protection level.
 
+
+🎯 **ASVS V16**
+
 - [ ] **V16.2.5** – Verify that when logging sensitive data, the application enforces logging based on the data's protection level. For example, it may not be allowed to log certain data, such as credentials or payment details. Other data, such as session tokens, may only be logged by being hashed or masked, either in full or partially.
 
+
+🎯 **ASVS V17**
+
 - [ ] **V17.2.1** – Verify that the key for the Datagram Transport Layer Security (DTLS) certificate is managed and protected based on the documented policy for management of cryptographic keys.
+
+
+🎯 **ASVS V6**
 
 - [ ] **V6.5.1** – Verify that lookup secrets, out-of-band authentication requests or codes, and time-based one-time passwords (TOTPs) are only successfully usable once.
 
@@ -56,6 +82,9 @@
 - [ ] **V6.5.4** – Verify that lookup secrets and out-of-band authentication codes have a minimum of 20 bits of entropy (typically 4 random alphanumeric characters or 6 random digits is sufficient).
 
 - [ ] **V6.8.2** – Verify that the presence and integrity of digital signatures on authentication assertions (for example on JWTs or SAML assertions) are always validated, rejecting any assertions that are unsigned or have invalid signatures.
+
+
+🎯 **ASVS V9**
 
 - [ ] **V9.2.3** – Verify that the service only accepts tokens which are intended for use with that service (audience). For JWTs, this can be achieved by validating the 'aud' claim against an allowlist defined in the service.
 

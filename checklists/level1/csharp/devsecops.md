@@ -1,12 +1,12 @@
-# 🟢 ASVS 1 Checklist – csharp – devsecops
+🟢 **Level 1**
+
+# ASVS 1 Checklist – csharp – devsecops
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
 
-> **No ASVS controls map to this language/role combination at the moment.**
-
-> *This file is still generated for completeness so teams have a predictable folder structure.
-> As the ASVS or mapping rules evolve, controls may appear here automatically.*
+> ⚠️ **No ASVS items match this language/role.**  
+> Review the General checklist for Level 1.
 
 <details><summary>Advanced defense‑in‑depth guidance</summary>
 

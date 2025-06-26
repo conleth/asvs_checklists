@@ -1,7 +1,12 @@
-# 🟢 ASVS 1 Checklist – javascript – mlops
+🟢 **Level 1**
+
+# ASVS 1 Checklist – javascript – mlops
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V3**
 
 - [ ] **V3.2.2** – Verify that content intended to be displayed as text, rather than rendered as HTML, is handled using safe rendering functions (such as createTextNode or textContent) to prevent unintended execution of content such as HTML or JavaScript.
 

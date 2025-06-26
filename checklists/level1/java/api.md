@@ -1,7 +1,12 @@
-# 🟢 ASVS 1 Checklist – java – api
+🟢 **Level 1**
+
+# ASVS 1 Checklist – java – api
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V1**
 
 - [ ] **V1.2.3** – Verify that output encoding or escaping is used when dynamically building JavaScript content (including JSON), to avoid changing the message or document structure (to avoid JavaScript and JSON injection).
 

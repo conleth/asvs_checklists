@@ -1,9 +1,17 @@
-# 🟡 ASVS 2 Checklist – general – devtools
+🟡 **Level 2**
+
+# ASVS 2 Checklist – general – devtools
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
 
+
+🎯 **ASVS V1**
+
 - [ ] **V1.5.2** – Verify that deserialization of untrusted data enforces safe input handling, such as using an allowlist of object types or restricting client-defined object types, to prevent deserialization attacks. Deserialization mechanisms that are explicitly defined as insecure must not be used with untrusted input.
+
+
+🎯 **ASVS V10**
 
 - [ ] **V10.1.2** – Verify that the client only accepts values from the authorization server (such as the authorization code or ID Token) if these values result from an authorization flow that was initiated by the same user agent session and transaction. This requires that client-generated secrets, such as the proof key for code exchange (PKCE) 'code_verifier', 'state' or OIDC 'nonce', are not guessable, are specific to the transaction, and are securely bound to both the client and the user agent session in which the transaction was started.
 
@@ -31,33 +39,66 @@
 
 - [ ] **V10.7.1** – Verify that the authorization server ensures that the user consents to each authorization request. If the identity of the client cannot be assured, the authorization server must always explicitly prompt the user for consent.
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.1.3** – Verify that the application validates that mTLS client certificates are trusted before using the certificate identity for authentication or authorization.
 
 - [ ] **V12.3.2** – Verify that TLS clients validate certificates received before communicating with a TLS server.
+
+
+🎯 **ASVS V13**
 
 - [ ] **V13.4.3** – Verify that web servers do not expose directory listings to clients unless explicitly intended.
 
 - [ ] **V13.4.5** – Verify that documentation (such as for internal APIs) and monitoring endpoints are not exposed unless explicitly intended.
 
+
+🎯 **ASVS V14**
+
 - [ ] **V14.2.4** – Verify that controls around sensitive data related to encryption, integrity verification, retention, how the data is to be logged, access controls around sensitive data in logs, privacy and privacy-enhancing technologies, are implemented as defined in the documentation for the specific data's protection level.
+
+
+🎯 **ASVS V15**
 
 - [ ] **V15.1.3** – Verify that the application documentation identifies functionality which is time-consuming or resource-demanding. This must include how to prevent a loss of availability due to overusing this functionality and how to avoid a situation where building a response takes longer than the consumer's timeout. Potential defenses may include asynchronous processing, using queues, and limiting parallel processes per user and per application.
 
+
+🎯 **ASVS V16**
+
 - [ ] **V16.3.3** – Verify that the application logs the security events that are defined in the documentation and also logs attempts to bypass the security controls, such as input validation, business logic, and anti-automation.
+
+
+🎯 **ASVS V2**
 
 - [ ] **V2.1.2** – Verify that the application's documentation defines how to validate the logical and contextual consistency of combined data items, such as checking that suburb and ZIP code match.
 
 - [ ] **V2.3.2** – Verify that business logic limits are implemented per the application's documentation to avoid business logic flaws being exploited.
 
+
+🎯 **ASVS V3**
+
 - [ ] **V3.3.4** – Verify that if the value of a cookie is not meant to be accessible to client-side scripts (such as a session token), the cookie must have the 'HttpOnly' attribute set and the same value (e. g. session token) must only be transferred to the client via the 'Set-Cookie' header field.
+
+
+🎯 **ASVS V4**
 
 - [ ] **V4.1.2** – Verify that only user-facing endpoints (intended for manual web-browser access) automatically redirect from HTTP to HTTPS, while other services or endpoints do not implement transparent redirects. This is to avoid a situation where a client is erroneously sending unencrypted HTTP requests, but since the requests are being automatically redirected to HTTPS, the leakage of sensitive data goes undiscovered.
 
+
+🎯 **ASVS V5**
+
 - [ ] **V5.1.1** – Verify that the documentation defines the permitted file types, expected file extensions, and maximum size (including unpacked size) for each upload feature. Additionally, ensure that the documentation specifies how files are made safe for end-users to download and process, such as how the application behaves when a malicious file is detected.
+
+
+🎯 **ASVS V7**
 
 - [ ] **V7.1.1** – Verify that the user's session inactivity timeout and absolute maximum session lifetime are documented, are appropriate in combination with other controls, and that the documentation includes justification for any deviations from NIST SP 800-63B re-authentication requirements.
 
 - [ ] **V7.1.2** – Verify that the documentation defines how many concurrent (parallel) sessions are allowed for one account as well as the intended behaviors and actions to be taken when the maximum number of active sessions is reached.
+
+
+🎯 **ASVS V8**
 
 - [ ] **V8.1.2** – Verify that authorization documentation defines rules for field-level access restrictions (both read and write) based on consumer permissions and resource attributes. Note that these rules might depend on other attribute values of the relevant data object, such as state or status.
 

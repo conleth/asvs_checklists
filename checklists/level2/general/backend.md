@@ -1,7 +1,12 @@
-# 🟡 ASVS 2 Checklist – general – backend
+🟡 **Level 2**
+
+# ASVS 2 Checklist – general – backend
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V1**
 
 - [ ] **V1.1.1** – Verify that input is decoded or unescaped into a canonical form only once, it is only decoded when encoded data in that form is expected, and that this is done before processing the input further, for example it is not performed after input validation or sanitization.
 
@@ -10,6 +15,9 @@
 - [ ] **V1.3.10** – Verify that format strings which might resolve in an unexpected or malicious way when used are sanitized before being processed.
 
 - [ ] **V1.4.2** – Verify that sign, range, and input validation techniques are used to prevent integer overflows.
+
+
+🎯 **ASVS V10**
 
 - [ ] **V10.1.2** – Verify that the client only accepts values from the authorization server (such as the authorization code or ID Token) if these values result from an authorization flow that was initiated by the same user agent session and transaction. This requires that client-generated secrets, such as the proof key for code exchange (PKCE) 'code_verifier', 'state' or OIDC 'nonce', are not guessable, are specific to the transaction, and are securely bound to both the client and the user agent session in which the transaction was started.
 
@@ -41,6 +49,9 @@
 
 - [ ] **V10.7.3** – Verify that the user can review, modify, and revoke consents which the user has granted through the authorization server.
 
+
+🎯 **ASVS V11**
+
 - [ ] **V11.1.1** – Verify that there is a documented policy for management of cryptographic keys and a cryptographic key lifecycle that follows a key management standard such as NIST SP 800-57. This should include ensuring that keys are not overshared (for example, with more than two entities for shared secrets and more than one entity for private keys).
 
 - [ ] **V11.1.2** – Verify that a cryptographic inventory is performed, maintained, regularly updated, and includes all cryptographic keys, algorithms, and certificates used by the application. It must also document where keys can and cannot be used in the system, and the types of data that can and cannot be protected using the keys.
@@ -63,9 +74,15 @@
 
 - [ ] **V11.6.1** – Verify that only approved cryptographic algorithms and modes of operation are used for key generation and seeding, and digital signature generation and verification. Key generation algorithms must not generate insecure keys vulnerable to known attacks, for example, RSA keys which are vulnerable to Fermat factorization.
 
+
+🎯 **ASVS V12**
+
 - [ ] **V12.1.3** – Verify that the application validates that mTLS client certificates are trusted before using the certificate identity for authentication or authorization.
 
 - [ ] **V12.3.1** – Verify that an encrypted protocol such as TLS is used for all inbound and outbound connections to and from the application, including monitoring systems, management tools, remote access and SSH, middleware, databases, mainframes, partner systems, or external APIs. The server must not fall back to insecure or unencrypted protocols.
+
+
+🎯 **ASVS V13**
 
 - [ ] **V13.2.1** – Verify that communications between backend application components that don't support the application's standard user session mechanism, including APIs, middleware, and data layers, are authenticated. Authentication must use individual service accounts, short-term tokens, or certificate-based authentication and not unchanging credentials such as passwords, API keys, or shared accounts with privileged access.
 
@@ -79,11 +96,20 @@
 
 - [ ] **V13.4.4** – Verify that using the HTTP TRACE method is not supported in production environments, to avoid potential information leakage.
 
+
+🎯 **ASVS V14**
+
 - [ ] **V14.1.2** – Verify that all sensitive data protection levels have a documented set of protection requirements. This must include (but not be limited to) requirements related to general encryption, integrity verification, retention, how the data is to be logged, access controls around sensitive data in logs, database-level encryption, privacy and privacy-enhancing technologies to be used, and other confidentiality requirements.
 
 - [ ] **V14.3.3** – Verify that data stored in browser storage (such as localStorage, sessionStorage, IndexedDB, or cookies) does not contain sensitive data, with the exception of session tokens.
 
+
+🎯 **ASVS V15**
+
 - [ ] **V15.3.5** – Verify that the application explicitly ensures that variables are of the correct type and performs strict equality and comparator operations. This is to avoid type juggling or type confusion vulnerabilities caused by the application code making an assumption about a variable type.
+
+
+🎯 **ASVS V16**
 
 - [ ] **V16.1.1** – Verify that an inventory exists documenting the logging performed at each layer of the application's technology stack, what events are being logged, log formats, where that logging is stored, how it is used, how access to it is controlled, and for how long logs are kept.
 
@@ -101,6 +127,9 @@
 
 - [ ] **V16.5.3** – Verify that the application fails gracefully and securely, including when an exception occurs, preventing fail-open conditions such as processing a transaction despite errors resulting from validation logic.
 
+
+🎯 **ASVS V17**
+
 - [ ] **V17.2.1** – Verify that the key for the Datagram Transport Layer Security (DTLS) certificate is managed and protected based on the documented policy for management of cryptographic keys.
 
 - [ ] **V17.2.3** – Verify that Secure Real-time Transport Protocol (SRTP) authentication is checked at the media server to prevent Real-time Transport Protocol (RTP) injection attacks from leading to either a Denial of Service condition or audio or video media insertion into media streams.
@@ -109,13 +138,25 @@
 
 - [ ] **V17.3.2** – Verify that the signaling server is able to continue processing legitimate signaling messages when encountering malformed signaling message that could cause a denial of service condition. This could include implementing input validation, safely handling integer overflows, preventing buffer overflows, and employing other robust error-handling techniques.
 
+
+🎯 **ASVS V2**
+
 - [ ] **V2.1.3** – Verify that expectations for business logic limits and validations are documented, including both per-user and globally across the application.
 
+
+🎯 **ASVS V3**
+
 - [ ] **V3.3.4** – Verify that if the value of a cookie is not meant to be accessible to client-side scripts (such as a session token), the cookie must have the 'HttpOnly' attribute set and the same value (e. g. session token) must only be transferred to the client via the 'Set-Cookie' header field.
+
+
+🎯 **ASVS V4**
 
 - [ ] **V4.4.3** – Verify that, if the application's standard session management cannot be used, dedicated tokens are being used for this, which comply with the relevant Session Management security requirements.
 
 - [ ] **V4.4.4** – Verify that dedicated WebSocket session management tokens are initially obtained or validated through the previously authenticated HTTPS session when transitioning an existing HTTPS session to a WebSocket channel.
+
+
+🎯 **ASVS V6**
 
 - [ ] **V6.1.3** – Verify that, if the application includes multiple authentication pathways, these are all documented together with the security controls and authentication strength which must be consistently enforced across them.
 
@@ -145,6 +186,9 @@
 
 - [ ] **V6.8.4** – Verify that, if an application uses a separate Identity Provider (IdP) and expects specific authentication strength, methods, or recentness for specific functions, the application verifies this using the information returned by the IdP. For example, if OIDC is used, this might be achieved by validating ID Token claims such as 'acr', 'amr', and 'auth_time' (if present). If the IdP does not provide this information, the application must have a documented fallback approach that assumes that the minimum strength authentication mechanism was used (for example, single-factor authentication using username and password).
 
+
+🎯 **ASVS V7**
+
 - [ ] **V7.1.1** – Verify that the user's session inactivity timeout and absolute maximum session lifetime are documented, are appropriate in combination with other controls, and that the documentation includes justification for any deviations from NIST SP 800-63B re-authentication requirements.
 
 - [ ] **V7.1.2** – Verify that the documentation defines how many concurrent (parallel) sessions are allowed for one account as well as the intended behaviors and actions to be taken when the maximum number of active sessions is reached.
@@ -169,9 +213,15 @@
 
 - [ ] **V7.6.2** – Verify that creation of a session requires either the user's consent or an explicit action, preventing the creation of new application sessions without user interaction.
 
+
+🎯 **ASVS V8**
+
 - [ ] **V8.1.2** – Verify that authorization documentation defines rules for field-level access restrictions (both read and write) based on consumer permissions and resource attributes. Note that these rules might depend on other attribute values of the relevant data object, such as state or status.
 
 - [ ] **V8.2.3** – Verify that the application ensures that field-level access is restricted to consumers with explicit permissions to specific fields to mitigate broken object property level authorization (BOPLA).
+
+
+🎯 **ASVS V9**
 
 - [ ] **V9.2.2** – Verify that the service receiving a token validates the token to be the correct type and is meant for the intended purpose before accepting the token's contents. For example, only access tokens can be accepted for authorization decisions and only ID Tokens can be used for proving user authentication.
 

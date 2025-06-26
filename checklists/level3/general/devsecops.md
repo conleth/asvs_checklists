@@ -1,7 +1,12 @@
-# 🔴 ASVS 3 Checklist – general – devsecops
+🔴 **Level 3**
+
+# ASVS 3 Checklist – general – devsecops
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V15**
 
 - [ ] **V15.2.4** – Verify that third-party components and all of their transitive dependencies are included from the expected repository, whether internally owned or an external source, and that there is no risk of a dependency confusion attack.
 

@@ -1,7 +1,12 @@
-# 🔴 ASVS 3 Checklist – java – backend
+🔴 **Level 3**
+
+# ASVS 3 Checklist – java – backend
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
+
+
+🎯 **ASVS V3**
 
 - [ ] **V3.2.3** – Verify that the application avoids DOM clobbering when using client-side JavaScript by employing explicit variable declarations, performing strict type checking, avoiding storing global variables on the document object, and implementing namespace isolation.
 

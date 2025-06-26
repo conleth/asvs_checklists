@@ -1,12 +1,12 @@
-# 🟡 ASVS 2 Checklist – javascript – mobile
+🟡 **Level 2**
+
+# ASVS 2 Checklist – javascript – mobile
 
 *Use during **DESIGN** and **PRE‑MERGE** review. This list is tailored to your stack and responsibility.*
 
 
-> **No ASVS controls map to this language/role combination at the moment.**
-
-> *This file is still generated for completeness so teams have a predictable folder structure.
-> As the ASVS or mapping rules evolve, controls may appear here automatically.*
+> ⚠️ **No ASVS items match this language/role.**  
+> Review the General checklist for Level 2.
 
 <details><summary>Advanced defense‑in‑depth guidance</summary>
 
