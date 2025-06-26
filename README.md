@@ -50,9 +50,7 @@ checklists/
 | SDLC phase                         | Minimal recommended action                                                                                  |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | **Requirements**                   | Check only the *architecture* & *deployment* files to ensure planned features do not violate core controls. |
-| **Design**                         | Walk through all relevant files; flag controls that need explicit design artefacts (e.g.                    |
-| threat‑model diagrams).            |                                                                                                             |
-| **Implementation**                 | Self‑check before committing; automated linters/tests may cover some items.                                 |
+| **Design**                         | Walk through all relevant files; flag controls that need explicit design artefacts (e.g.                    | threat‑model diagrams). |
 | **Code review / Merge request**    | Reviewer verifies every box is ticked and evidence (test, scan report, commit link) is recorded.            |
 | **Pre‑release / Security testing** | Confirm nothing is left unchecked; attach penetration‑test findings to the same list.                       |
 | **Operations & maintenance**       | Re‑run the list after major infra changes or annually, whichever comes first.                               |
@@ -66,7 +64,7 @@ checklists/
 Each line follows the pattern
 
 ```markdown
-- [ ] V2.1.3 | 🟥 MUST | *All password storage uses Argon2id with at least …*
+- [ ] V11.4.2 | 🟥 MUST | *Passwords are stored using an approved, computationally intensive key derivation function (e.g., Argon2id) with parameters set per current guidance.*
       ^checkbox   ^priority ^requirement text (verbatim from ASVS)
 ```
 
@@ -125,6 +123,9 @@ python tools/extract_unchecked.py level2 > unchecked.txt
 if grep -q "| 🟥" unchecked.txt; then
   echo "Blocking build: mandatory controls missing" && exit 1
 fi
+if grep -q "| 🟧" unchecked.txt; then
+  echo "⚠︎ Recommended controls (🟧) remain unchecked — please review before merge."
+fi
 ```
 
 ---
@@ -133,7 +134,7 @@ fi
 
 | Event                           | Action                                                               |
 | ------------------------------- | -------------------------------------------------------------------- |
-| OWASP releases new ASVS version | Track diff, update affected lines **within 30 days**.                |
+| OWASP releases new ASVS version | Track diff, update affected lines **ideally within 30 days**; raise an exception ticket if the diff affects more than 50 lines or requires code changes. |
 | New language/stack is adopted   | Add a folder (e.g. `python/`) and include only stack‑specific items. |
 | Internal risk/guidelines change | Adjust priority badges; never change ASVS wording itself.            |
 
@@ -157,6 +158,7 @@ These check‑lists are derived from OWASP ASVS, which is licensed under the [C
 
 ## 10  References & further reading
 
+* `OWASP_Application_Security_Verification_Standard_5.0.0_en.json` – machine‑readable source for tooling
 * [OWASP ASVS Project](https://owasp.org/www-project-application-security-verification-standard/)
 * [Cheat Sheet Series](https://cheatsheetseries.owasp.org/) – implementation guidance for many controls
 * [OWASP SAMM](https://owasp.org/www-project-samm/) – security‑practice maturity model (macro‑level)
