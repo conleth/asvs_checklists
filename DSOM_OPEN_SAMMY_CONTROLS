@@ -1,0 +1,64 @@
+🛠️ SAMM + Tooling for Visualization and Kaizen
+🔄 From Static PDF to Living Dashboard
+Dag Flachet explains that historically, organizations would do a one-time SAMM assessment, producing a PDF report that quickly became outdated.
+
+Instead, he recommends:
+
+Using tools like:
+
+OWASP SAMM Toolkit
+
+OpenSAMMY (an OWASP project)
+
+These allow:
+
+Continuous evaluation cycles
+
+Dashboards that track real-time progress
+
+Score expirations, so assessments don’t go stale
+
+Iterative improvement planning following Kaizen principles
+
+This transforms SAMM from a static compliance tool into a dynamic backbone for continuous AppSec improvement.
+
+🧱 How DSOM Fits Into the Picture
+DSOM = DevSecOps Maturity Model
+
+Unlike SAMM (which covers Governance, Design, Implementation, Verification, and Operations), DSOM is SDLC-focused, especially on team-level engineering practices.
+
+In large orgs:
+
+Development teams might do DSOM self-assessments
+
+Business units or central AppSec do SAMM assessments
+
+The scores from DSOM map into SAMM’s "Design, Implement, and Verify" domains.
+
+Other SAMM domains (like Governance and Operations) are handled separately.
+
+This layering allows a bottom-up + top-down view, enabling strategic reporting from developer practices all the way to the boardroom.
+
+🧭 Bonus Insight: Tool Mapping Dreams
+Dag notes that many AppSec leaders struggle with duplicative work—filling out:
+
+SAMM
+
+ISO 27001
+
+SOC 2
+
+NIST, etc.
+
+He references an emerging project called OpenCRE / OpenControl mapping, which aims to unify these frameworks and reduce overhead by aligning them behind a common backbone (like SAMM).
+
+✅ Summary
+Use SAMM + OpenSAMMY to turn assessments into continuous improvement.
+
+Use DSOM for development team-level insight and map it into SAMM’s central structure.
+
+Visual dashboards + iterative Kaizen cycles = real-world maturity tracking and improvement.
+
+Tooling should support Kaizen by surfacing what to improve next—not just what’s been done.
+
+Let me know if you'd like a visual diagram or mapping chart of how DSOM and SAMM interconnect or how OpenSAMMY works in practice.
