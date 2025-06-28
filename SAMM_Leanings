@@ -1,0 +1,46 @@
+🔑 1. Kaizen = “Good Change” via Continuous Improvement
+Kaizen is a Japanese term meaning "good change." It promotes small, incremental improvements over time.
+
+In AppSec, this means focusing on manageable improvements rather than trying to solve everything at once (“boiling the ocean”).
+
+🧭 2. Pair Kaizen with OWASP SAMM
+The OWASP Software Assurance Maturity Model (SAMM) breaks AppSec into discrete activities across five business functions (Governance, Design, Implementation, Verification, Operations).
+
+Combining SAMM with Kaizen enables you to:
+
+Assess current maturity
+
+Create a roadmap of small, prioritized improvements
+
+Track progress over time with clear criteria
+
+🧱 3. Focus on One Drawer at a Time
+The metaphor used was: don’t try to clean the whole house, just pick one drawer and do it well.
+
+In AppSec terms, this means: pick one practice (e.g. threat modeling or SAST) and improve it iteratively.
+
+📊 4. Move from Static Reports to Living Dashboards
+Traditional maturity assessments (e.g., a PDF report) are quickly outdated.
+
+Instead, use tools like OpenSAMM Toolkit or OpenSAMMY to maintain a live dashboard with expiring scores, continuous updates, and team-level roadmaps.
+
+🧑‍🤝‍🧑 5. Bottom-Up Participation Builds Buy-In
+While AppSec leadership often drives maturity improvement, developers and teams should have visibility into the maturity map and contribute to their own roadmap.
+
+Example: a national rail company allowed 200+ teams to self-assess and request AppSec resources bottom-up.
+
+⚖️ 6. SAMM Is for Growth, Not Just Compliance
+ISO 27001 and SOC 2 are about compliance, not necessarily improving AppSec processes.
+
+SAMM supports real security improvement over time.
+
+Compliance frameworks can be mapped to SAMM, but the value lies in long-term security posture growth.
+
+🔄 7. Avoid the Points Game Trap
+Not all maturity improvements are equal in value. Prioritize what’s impactful, not just what gains points quickly.
+
+Ex: Adding SAST might be easier than implementing threat modeling—but threat modeling may be more valuable in your context.
+
+💡 Final Takeaway
+“Don’t be afraid of little steps. If you keep a well-defined map and follow it consistently, small improvements will lead to excellent security outcomes.”
+
