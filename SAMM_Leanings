@@ -44,3 +44,91 @@ Ex: Adding SAST might be easier than implementing threat modeling—but threat m
 💡 Final Takeaway
 “Don’t be afraid of little steps. If you keep a well-defined map and follow it consistently, small improvements will lead to excellent security outcomes.”
 
+
+🧠 Top “Hidden Gem” Takeaways from Dag Flachet’s Talk
+🧩 1. Kaizen Applied to AppSec = Sustainable Change
+Most AppSec leaders get paralyzed by the size of the problem—hundreds of things to fix.
+
+Kaizen reframes this: do one thing really well per cycle.
+
+You don’t need big budgets or full staffing—just momentum and a way to track drift elsewhere.
+
+The “one drawer at a time” metaphor (from 5S lean practice) is a helpful mindset.
+
+🗣️ “You don’t need all the resources. You just need small, consistent steps and a maturity model to track the rest.”
+
+📊 2. SAMM Becomes a Communication Bridge
+SAMM isn’t just a tracking model. It:
+
+Helps teams know what "good" looks like
+
+Enables execs to see progress
+
+Provides a shared language between AppSec, developers, and leadership
+
+💡 SAMM gives clarity: You can say “we’re 85% to our target posture in Threat Modeling” vs “we need to improve.”
+
+🔄 3. Stop Treating Assessments Like One-Offs
+A big flaw in many orgs: SAMM assessments are point-in-time and used for PowerPoints.
+
+Dag’s recommendation:
+
+Use OpenSAMMY or similar tooling
+
+Build expiration logic so scores go stale (just like vulnerability SLAs)
+
+Keep SAMM as a living program, not an annual event
+
+🕹️ 4. Gamification Is a Double-Edged Sword
+Teams naturally want to “score points” and improve their SAMM ratings.
+
+But:
+
+Some controls are low-effort, low-impact
+
+Others (like threat modeling or security requirements) are high-effort, high-impact
+
+You need to prioritize by value, not just what looks good on the maturity report.
+
+🗣️ “Two points in threat modeling may be more impactful than two points from a checklist.”
+
+🧭 5. Developer Visibility Into the Map Matters
+Developers don’t need to know Kaizen—but they should see the SAMM roadmap.
+
+When they see why things are being asked of them, buy-in improves.
+
+One European railway company open-sourced its AppSec roadmap internally and let teams opt-in and ask for support.
+
+💡 That flipped the power dynamic and created bottom-up engagement.
+
+🔌 6. SAMM + DSOM = Layered Insights
+Use DSOM at the dev team level to measure how security is being built.
+
+Use SAMM at the org level to track maturity across Governance, Design, Implementation, Verification, Operations.
+
+Use DSOM data to fill in the “Implement,” “Design,” and “Verify” SAMM domains.
+
+You get a multi-level picture—and a path to link maturity improvements to delivery teams.
+
+🧱 7. SAMM as a Foundation for Compliance Mapping
+Dag points out the fatigue teams feel when filling out:
+
+ISO
+
+SOC 2
+
+NIST
+
+SAMM
+
+Custom internal security checklists
+
+He references projects like OpenCRE and OpenControl aiming to create a mapping backbone, so SAMM can “translate” into ISO controls.
+
+🔗 Imagine: improving your AppSec maturity AND getting ISO compliance with the same data model.
+
+✅ Final Wisdom from Dag
+“Don’t be afraid of little steps. As long as the map is clear, you can build something great, one improvement at a time.”
+
+Would you like a 1-pager or dashboard template based on these ideas for your own AppSec program planning?
+
