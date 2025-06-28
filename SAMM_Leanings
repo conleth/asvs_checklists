@@ -130,5 +130,92 @@ He references projects like OpenCRE and OpenControl aiming to create a mapping b
 ✅ Final Wisdom from Dag
 “Don’t be afraid of little steps. As long as the map is clear, you can build something great, one improvement at a time.”
 
-Would you like a 1-pager or dashboard template based on these ideas for your own AppSec program planning?
+🔍 More Underrated but Strategic Nuggets from the Talk
+🧠 1. "Assessment Fairness" Matters More Than You Think
+Dag warns about uneven self-assessments:
+
+Some teams are overly generous; others are too harsh on themselves.
+
+If maturity scores feed into KPIs or exec reporting, this inconsistency can break trust or cause resentment.
+
+💡 Solution: A hybrid model where teams self-assess, but the central AppSec team validates scores (and artifacts) for consistency.
+
+🧭 2. Target Postures per Team/Context
+Instead of one-size-fits-all, define custom “target postures”:
+
+Customer-facing apps might need high maturity in “Verify”
+
+Internal admin tools might not
+
+Embedded or IoT teams might never get to full coverage in “Operations”
+
+This avoids overburdening teams with irrelevant goals and improves strategy alignment.
+
+🧰 3. Kaizen = Better Resource Justification
+A major unlock:
+
+“You don’t need to say we’re failing at security. You can now say we’ve improved 2 points in implementation, and here’s where more support would move the needle.”
+
+This reframes AppSec from being a blocker to being:
+
+A program of growth
+
+With measurable ROI
+
+Backed by data from real teams
+
+Execs love progress metrics, not just “we’re not compliant.”
+
+🧪 4. Experimentation Encouraged
+Dag references companies like the railway firm that allow teams to opt in to SAMM assessments, propose roadmaps, and request security resources.
+
+That flips the narrative from:
+
+“Security is telling us what to do”
+to
+“We’re choosing to level up and getting support.”
+
+Even if not all teams do this, enabling the option creates pull—especially among high-performing or security-conscious teams.
+
+🧬 5. SAMM v3 Is Coming — Contribute Now
+Dag casually drops that SAMM v3 is in development, and the team is actively soliciting community feedback.
+
+If you’ve been annoyed by anything in SAMM 2.0—now’s your chance to shape the next version.
+
+Here’s what you can do:
+
+Review the SAMM GitHub Issues
+
+Submit use cases, challenges, or edge cases your org faces
+
+Help modernize it to better integrate with agile/DevOps/AI models
+
+📣 6. SAMM as a Storytelling Tool
+Dag emphasizes that SAMM isn’t just a measurement tool—it’s a narrative driver.
+
+Example:
+
+“We’re here today. Our roadmap gets us to this level in 6 months. Here’s what it unlocks (less risk, faster delivery, compliance).”
+
+That’s a story that:
+
+Execs can sponsor
+
+Teams can buy into
+
+And security leaders can lead confidently
+
+🧭 7. SAMM Enables Repeatable, Documented Process
+This one's implicit: SAMM’s value grows because it's structured, documented, and objective.
+
+So when stakeholders change, priorities shift, or audits happen—you don’t lose the plot.
+
+If you’re building a Center of Excellence or Security Champions program, SAMM gives you the bedrock for:
+
+Training plans
+
+OKRs
+
+Team-level enablement
+
 
